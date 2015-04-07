@@ -7,9 +7,17 @@ block content
       a(ng-class='{active: isOn}', class='item', ng-click="tabHighlight()") 找资源
       a(ng-class='{active: !isOn}', class='item', ng-click="tabHighlight()")  留言版
 
+    .three.column.row
+      .column
+      .column
+        .ui.action.left.icon.input
+          i(class="search icon")
+          input(type="text" placeholder="Search...")
+          .ui.teal.button Search
+      .column
 
   script(src='/bower_components/jquery/dist/jquery.min.js')
-  script(src='/javascripts/libs/semantic.min.js')
+  script(src='/bower_components/semantic-ui/dist/semantic.min.js')
   script(src='/bower_components/angularjs/angular.min.js')
   script(src='/javascripts/app.js')
   script(src='/javascripts/controller.js')
