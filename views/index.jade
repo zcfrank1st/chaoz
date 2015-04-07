@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // logo
+  div(ng-controller='body')
+    .ui.tabular.menu
+      a(ng-class='{active: isOn}', class='item', ng-click="tabHighlight()") 找资源
+      a(ng-class='{active: !isOn}', class='item', ng-click="tabHighlight()")  留言版
+
+
+  script(src='/bower_components/jquery/dist/jquery.min.js')
+  script(src='/javascripts/libs/semantic.min.js')
+  script(src='/bower_components/angularjs/angular.min.js')
+  script(src='/javascripts/app.js')
+  script(src='/javascripts/controller.js')
