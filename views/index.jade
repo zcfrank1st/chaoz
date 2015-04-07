@@ -6,15 +6,29 @@ block content
     .ui.tabular.menu
       a(ng-class='{active: isOn}', class='item', ng-click="tabHighlight()") 找资源
       a(ng-class='{active: !isOn}', class='item', ng-click="tabHighlight()")  留言版
+    .ui.grid
+      .three.column.row
+        .column
+        .column
+          div(class='ui left icon input input-align')
+            i(class="search icon")
+            input(type="text")
+            div(class='ui blue basic button') 搜
+        .column
 
-    .three.column.row
-      .column
-      .column
-        .ui.action.left.icon.input
-          i(class="search icon")
-          input(type="text" placeholder="Search...")
-          .ui.teal.button Search
-      .column
+      .nine.column.row
+        .column
+        .column
+        .column
+        .column
+        .column
+          div(class='ui green basic button') 试试手气
+        .column
+        .column
+        .column
+        .column
+
+    div(class='ui inverted blue footer vertical segment')
 
   script(src='/bower_components/jquery/dist/jquery.min.js')
   script(src='/bower_components/semantic-ui/dist/semantic.min.js')
