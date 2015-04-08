@@ -4,8 +4,10 @@ block content
   // logo
   div(ng-controller='body')
     .ui.tabular.menu
-      a(ng-class='{active: isOn}', class='item', ng-click="tabHighlight()") 找资源
-      a(ng-class='{active: !isOn}', class='item', ng-click="tabHighlight()")  留言版
+      a(ng-class='{active: true}', class='item', ng-click="tabHighlight()") 资源
+      a(class='item')  说说
+
+    // 其中一个viewer
     .ui.grid
       .three.column.row
         .column
@@ -13,7 +15,7 @@ block content
           div(class='ui left icon input input-align')
             i(class="search icon")
             input(type="text")
-            div(class='ui blue basic button') 搜
+            div(class='ui blue basic button') 找找
         .column
 
       .nine.column.row
@@ -28,7 +30,9 @@ block content
         .column
         .column
 
-    div(class='ui inverted blue footer vertical segment')
+    div(class='footer')
+      .ui.horizontal.divider
+        i(class='china flag')
 
   script(src='/bower_components/jquery/dist/jquery.min.js')
   script(src='/bower_components/semantic-ui/dist/semantic.min.js')
