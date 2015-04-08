@@ -4,31 +4,11 @@ block content
   // logo
   div(ng-controller='body')
     .ui.tabular.menu
-      a(ng-class='{active: true}', class='item', ng-click="tabHighlight()") 资源
+      a(ng-class='{active: true}', class='item', ng-click="tabHighlight()", ui-sref='search') 资源
       a(class='item')  说说
 
     // 其中一个viewer
-    .ui.grid
-      .three.column.row
-        .column
-        .column
-          div(class='ui left icon input input-align')
-            i(class="search icon")
-            input(type="text")
-            div(class='ui blue basic button') 找找
-        .column
-
-      .nine.column.row
-        .column
-        .column
-        .column
-        .column
-        .column
-          div(class='ui green basic button') 试试手气
-        .column
-        .column
-        .column
-        .column
+    div(ui-view)
 
     div(class='footer')
       .ui.horizontal.divider
@@ -37,5 +17,6 @@ block content
   script(src='/bower_components/jquery/dist/jquery.min.js')
   script(src='/bower_components/semantic-ui/dist/semantic.min.js')
   script(src='/bower_components/angularjs/angular.min.js')
+  script(src='/bower_components/ui-router/release/angular-ui-router.min.js')
   script(src='/javascripts/app.js')
   script(src='/javascripts/controller.js')
