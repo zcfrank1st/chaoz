@@ -1,9 +1,12 @@
 chaoz.controller('body', function ($scope) {
     //
     $scope.isOn = true;
-    $scope.tabHighlight = function () {
-        $scope.isOn = !$scope.isOn;
-    }
+    $scope.searchModule = function () {
+        $scope.isOn = true;
+    };
+    $scope.talkModule = function () {
+        $scope.isOn = false;
+    };
 
 
 });

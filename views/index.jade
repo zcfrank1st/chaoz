@@ -4,15 +4,18 @@ block content
   // logo
   div(ng-controller='body')
     .ui.tabular.menu
-      a(ng-class='{active: true}', class='item', ng-click="tabHighlight()", ui-sref='search') 资源
-      a(class='item')  说说
+      a(ng-class='{active: isOn}', class='item', ng-click="searchModule()", ui-sref='search') 资源
+      a(ng-class='{active: !isOn}', class='item', ng-click="talkModule()", ui-sref='talk')  说说
 
-    // 其中一个viewer
     div(ui-view)
 
     div(class='footer')
       .ui.horizontal.divider
         i(class='china flag')
+      .footer-info
+        div Dev. by zcfrank1st
+        div
+          a(href="mailto:zhchaos@gmail.com") 联系我(邮件)
 
   script(src='/bower_components/jquery/dist/jquery.min.js')
   script(src='/bower_components/semantic-ui/dist/semantic.min.js')

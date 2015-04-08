@@ -10,5 +10,16 @@ chaoz.config(function($stateProvider, $urlRouterProvider) {
         .state('search', {
             url: "/search",
             templateUrl: "template/search.html"
+            //controller: ""
+        })
+        .state('results', {
+            url: "/results",
+            templateUrl: "template/results.html"
+            //controller: ""
+        })
+        .state('talk', {
+            url: "/talk",
+            templateUrl: "template/talks.html"
+            //controller: ""
         })
 });

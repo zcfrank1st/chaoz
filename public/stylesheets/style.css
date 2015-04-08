@@ -18,3 +18,7 @@ a {
 .footer {
   margin-top: 18%;
 }
+
+.footer-info {
+  text-align: right;
+}
