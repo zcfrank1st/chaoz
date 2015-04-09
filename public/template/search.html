@@ -1,10 +1,20 @@
 <div class="ui grid" ng-show="default">
+    <div class="one column row">
+        <div class="column">
+            <div class="ui animated red basic button" style="float: right">
+                <div class="visible content">去分享</div>
+                <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="three column row">
         <div class="column"></div>
         <div class="column">
             <div class="ui left icon input input-align">
                 <i class="search icon"></i>
-                <input type="text">
+                <input type="text" placeholder="电子书,种子...">
 
                 <div class="ui blue basic button" ng-click="find()">找找</div>
             </div>
