@@ -1,11 +1,12 @@
-<div class="ui grid">
+<div class="ui grid" ng-show="default">
     <div class="three column row">
         <div class="column"></div>
         <div class="column">
             <div class="ui left icon input input-align">
                 <i class="search icon"></i>
                 <input type="text">
-                <div class="ui blue basic button">找找</div>
+
+                <div class="ui blue basic button" ng-click="find()">找找</div>
             </div>
         </div>
         <div class="column"></div>
@@ -25,4 +26,55 @@
         <div class="column"></div>
         <div class="column"></div>
     </div>
+</div>
+
+<div ng-show="!default">
+    <div class="mini ui yellow basic button" ng-click="return()"><i class="reply icon"></i>返回</div>
+    <!-- table ng-repeat -->
+    <table class="ui celled striped table">
+        <thead>
+        <tr>
+            <th colspan="3">
+                Files
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="disabled">
+                <i class="folder icon"></i> folder
+            </td>
+            <td>Comment</td>
+            <td class="right aligned collapsing">10 hours ago</td>
+        </tr>
+        <tr>
+            <td>
+                <i class="folder icon"></i> folder2
+            </td>
+            <td>Comment</td>
+            <td class="right aligned">10 hours ago</td>
+        </tr>
+        <tr>
+            <td>
+                <i class="folder icon"></i> folder3
+            </td>
+            <td>Comment</td>
+            <td class="right aligned">10 hours ago</td>
+        </tr>
+        <tr>
+            <td class="collapsing">
+                <i class="file outline icon"></i> package.json
+            </td>
+            <td>Comment</td>
+            <td class="right aligned">10 hours ago</td>
+        </tr>
+        <tr>
+            <td>
+                <i class="file outline icon"></i> Gruntfile.js
+            </td>
+            <td>Comment</td>
+            <td class="right aligned">10 hours ago</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
