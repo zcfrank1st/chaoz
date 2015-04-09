@@ -13,9 +13,36 @@ chaoz.controller('search', function($scope){
     $scope.default = true;
     $scope.find = function () {
         $scope.default = false;
+        $scope.pagination = true;
+    };
+
+    $scope.latest10 = function () {
+        $scope.default = false;
+        $scope.pagination = false;
     };
 
     $scope.return = function () {
         $scope.default = true;
-    }
+    };
+
+    $scope.items = [
+        {
+            type: "ebook",
+            name: "book1",
+            description: "book",
+            timestamp: "2015-04-08"
+        },
+        {
+            type: "torrent",
+            name: "everyday",
+            description: "bt file",
+            timestamp: ""
+        },
+        {
+            type: "video",
+            name: "movie",
+            description: "video",
+            timestamp: ""
+        }
+    ]
 });

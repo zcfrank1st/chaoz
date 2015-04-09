@@ -28,7 +28,7 @@
         <div class="column"></div>
         <div class="column"></div>
         <div class="column">
-            <div class="ui green basic button">最新10条</div>
+            <div class="ui green basic button" ng-click="latest10()">最新10条</div>
         </div>
 
         <div class="column"></div>
@@ -44,46 +44,35 @@
     <table class="ui celled striped table">
         <thead>
         <tr>
-            <th colspan="3">
-                Files
+            <th colspan="4" style="text-align: center;">
+                搜索结果列表
             </th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td class="disabled">
-                <i class="folder icon"></i> folder
-            </td>
-            <td>Comment</td>
-            <td class="right aligned collapsing">10 hours ago</td>
+            <td>资源名称</td>
+            <td>资源类型</td>
+            <td>下载地址</td>
+            <td>登记时间</td>
         </tr>
-        <tr>
+        <tr ng-repeat="item in items">
+            <td>{{item.name}}</td>
             <td>
-                <i class="folder icon"></i> folder2
+                <i class="folder icon"></i>{{item.type}}
             </td>
-            <td>Comment</td>
-            <td class="right aligned">10 hours ago</td>
+            <td>{{item.description}}</td>
+            <td class="right aligned collapsing">{{item.timestamp}}</td>
         </tr>
-        <tr>
-            <td>
-                <i class="folder icon"></i> folder3
+        <tr ng-show="!default && pagination">
+            <td colspan="4" style="text-align: right">
+                <div class="ui icon buttons">
+                    <div class="ui button"><i class="angle double left icon"></i></div>
+                    <div class="ui button"><i class="angle left icon"></i></div>
+                    <div class="ui button"><i class="angle right icon"></i></div>
+                    <div class="ui button"><i class="angle double right icon"></i></div>
+                </div>
             </td>
-            <td>Comment</td>
-            <td class="right aligned">10 hours ago</td>
-        </tr>
-        <tr>
-            <td class="collapsing">
-                <i class="file outline icon"></i> package.json
-            </td>
-            <td>Comment</td>
-            <td class="right aligned">10 hours ago</td>
-        </tr>
-        <tr>
-            <td>
-                <i class="file outline icon"></i> Gruntfile.js
-            </td>
-            <td>Comment</td>
-            <td class="right aligned">10 hours ago</td>
         </tr>
         </tbody>
     </table>
