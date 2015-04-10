@@ -1,7 +1,7 @@
 <div class="ui grid" ng-show="default">
     <div class="one column row">
         <div class="column">
-            <div class="ui animated red basic button" style="float: right">
+            <div class="ui animated red basic button" style="float: right" ng-click="share()">
                 <div class="visible content">去分享</div>
                 <div class="hidden content">
                     <i class="right arrow icon"></i>
@@ -38,22 +38,24 @@
     </div>
 </div>
 
-<div ng-show="!default">
+<div ng-show="result">
     <div class="mini ui yellow basic button" ng-click="return()"><i class="reply icon"></i>返回</div>
     <!-- table ng-repeat -->
     <table class="ui celled striped table">
         <thead>
         <tr>
-            <th colspan="4" style="text-align: center;">
+            <th colspan="6" style="text-align: center;">
                 搜索结果列表
             </th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>资源名称</td>
-            <td>资源类型</td>
-            <td>下载地址</td>
+            <td>名称</td>
+            <td>类型</td>
+            <td>描述</td>
+            <td>下载</td>
+            <td>评价</td>
             <td>登记时间</td>
         </tr>
         <tr ng-repeat="item in items">
@@ -62,10 +64,12 @@
                 <i class="folder icon"></i>{{item.type}}
             </td>
             <td>{{item.description}}</td>
+            <td>{{item.link}}</td>
+            <td>{{item.comment}}</td>
             <td class="right aligned collapsing">{{item.timestamp}}</td>
         </tr>
-        <tr ng-show="!default && pagination">
-            <td colspan="4" style="text-align: right">
+        <tr ng-show="result && pagination">
+            <td colspan="6" style="text-align: right">
                 <div class="ui icon buttons">
                     <div class="ui button"><i class="angle double left icon"></i></div>
                     <div class="ui button"><i class="angle left icon"></i></div>
@@ -76,4 +80,41 @@
         </tr>
         </tbody>
     </table>
+</div>
+
+<div ng-show="shareList">
+    <div class="mini ui yellow basic button" ng-click="return()"><i class="reply icon"></i>返回</div>
+    <div class="ui warning form segment" style="width:60%; margin: auto;">
+        <div class="ui warning message">
+            <div class="header">注意和说明</div>
+            <ul class="list">
+                <li>Problem #1</li>
+                <li>Problem #2</li>
+                <li>Problem #1</li>
+            </ul>
+        </div>
+        <div class="two required fields">
+            <div class="field">
+                <label>名称</label>
+                <input placeholder="例如：thinking in java, 4th" type="text">
+            </div>
+            <div class="field">
+                <label>链接</label>
+                <input placeholder="例如：http://pan.baidu.com/s/1mg5PSSw" type="text">
+            </div>
+        </div>
+        <div class="field">
+            <label>描述</label>
+            <textarea></textarea>
+        </div>
+        <div class="required field">
+            <label>类型</label>
+            <select>
+                <option value="">选择</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div class="ui submit button" style="float: right;">提交</div>
+    </div>
 </div>
