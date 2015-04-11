@@ -65,7 +65,27 @@
             </td>
             <td>{{item.description}}</td>
             <td>{{item.link}}</td>
-            <td>{{item.comment}}</td>
+            <td>
+                <div class="mini ui statistics">
+                    <div class="statistic">
+                        <div class="value">
+                            <i class="thumbs outline up icon"></i> 5
+                        </div>
+                        <div class="label">
+                            好资源
+                        </div>
+                    </div>
+                    <div class="statistic">
+                        <div class="value">
+                            <i class="thumbs outline down icon"></i>
+                            11
+                        </div>
+                        <div class="label">
+                            烂资源
+                        </div>
+                    </div>
+                </div>
+            </td>
             <td class="right aligned collapsing">{{item.timestamp}}</td>
         </tr>
         <tr ng-show="result && pagination">
