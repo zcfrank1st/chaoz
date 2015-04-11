@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  img(src='/images/logo.png', height='10%', width='10%', style='top:0;position:absolute')
   div(ng-controller='body')
     .ui.tabular.menu
       a(ng-class='{active: isOn}', class='item', ng-click="searchModule()", ui-sref='search') 资源
