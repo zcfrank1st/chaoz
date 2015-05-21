@@ -35,6 +35,8 @@ chaoz.controller('search', function($scope){
         $scope.shareList = true;
     };
 
+
+    // angular resource 请求
     $scope.items = [
         {
             type: "ebook",
