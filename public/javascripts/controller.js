@@ -35,6 +35,9 @@ chaoz.controller('search', function($scope){
         $scope.shareList = true;
     };
 
+    $scope.updateInfo = function () {
+
+    };
 
     // angular resource 请求
     $scope.items = [
